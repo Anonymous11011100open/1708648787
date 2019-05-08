@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Not Grammmmmaticly correct.</title>
+</head>
+
+<body id="scare">
+    <p>killTitle. I like creepy emails. I know you.</p>
+    <br />
+    <input type="text" placeholder="once you get it, you might need to highlight the evidience." id="Adfe">
+</body>
+<script>
+    var ohHiThere = document.getElementById("Adfe")
+    var val = ohHiThere.value
+    var hash
+    function hash(str) {
+        var hash = 5381,
+            i = str.length;
+
+        while (i) {
+            hash = (hash * 33) ^ str.charCodeAt(--i);
+        }
+        return hash
+    }
+    function good() {
+        if (hash(val) == -1006338282) {
+            document.body.innerHTML = ""
+            document.body.style.background = "#000000"
+            document.body.innerHTML = "<p align='center' color='#FFFFFF'>alp:abcdefghijklmnopqrstuvwxyz1234567890<br/>https://github.com/Anonymous11011100open/1708648787</p>"
+        }
+    }
+    document.addEventListener('keyup', function (event) {
+        if (event.defaultPrevented) {
+            return;
+        }
+
+        var key = event.key || event.keyCode;
+
+        if (key === 'Enter') {
+            ohHiThere = document.getElementById("Adfe")
+            val = ohHiThere.value
+            if (hash(val) == -1006338282) {
+                good()
+            }
+            else {
+                window.close()
+            }
+        }
+    });
+</script>
+
+</html>
